@@ -1,17 +1,29 @@
-variable "instance_name" {
-    default = "Monitoring_server"  # Names of the instance
+variable "aws_region" {
+  description = "The AWS region to deploy resources in"
+  type        = string
+  default     = "ap-southeast-1"
 }
 
-variable "key_name" {
-  default = "terra"                  # Names of key in aws
+variable "instance_type" {
+  description = "The type of AWS EC2 instance to use"
+  type        = string
+  default     = "t2.micro"
 }
-
 
 variable "access_key" {
-  default = "insert"                # aws access key
+  description = "The AWS access key"
+  type        = string
+  sensitive   = true
 }
 
 variable "secret_key" {
-  default = "insert"         # aws secret key
+  description = "The AWS secret key"
+  type        = string
+  sensitive   = true
 }
 
+variable "key_pair" {
+  description = "The name of the SSH key pair"
+  type        = string
+  default     = "my-key-pair"
+}
